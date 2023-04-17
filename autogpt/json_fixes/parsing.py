@@ -13,7 +13,6 @@ from autogpt.logs import logger
 
 CFG = Config()
 
-
 JSON_SCHEMA = """
 {
     "command": {
@@ -96,6 +95,7 @@ def fix_and_parse_json(
     except (json.JSONDecodeError, ValueError) as e:
         return try_ai_fix(try_to_fix_with_gpt, e, json_to_load)
 
+
 def extract_longest_curly_braces_content(string):
     """
     :param string: The string to extract the longest content from.
@@ -121,7 +121,10 @@ def extract_longest_curly_braces_content(string):
                     if content_len > longest_len:
                         longest_len = content_len
                         longest_content = content
-    return f"{{{longest_content}}}"
+    if len(longest_content) > 0:
+        return f"{{{longest_content}}}"
+    return string
+
 
 def try_ai_fix(
     try_to_fix_with_gpt: bool, exception: Exception, json_to_load: str
