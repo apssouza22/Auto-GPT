@@ -1,12 +1,7 @@
 ## Original ignores
 autogpt/keys.py
-autogpt/*json
-autogpt/node_modules/
-autogpt/__pycache__/keys.cpython-310.pyc
-autogpt/auto_gpt_workspace
-package-lock.json
-*.pyc
-auto_gpt_workspace/*
+autogpt/*.json
+**/auto_gpt_workspace/*
 *.mpeg
 .env
 azure.yaml
@@ -20,6 +15,8 @@ log-ingestion.txt
 logs
 *.log
 *.mp3
+mem.sqlite3
+venvAutoGPT
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -94,6 +91,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+site/
 
 # PyBuilder
 target/
@@ -156,6 +154,8 @@ vicuna-*
 
 # mac
 .DS_Store
+
+openai/
 
 # news
 CURRENT_BULLETIN.md
